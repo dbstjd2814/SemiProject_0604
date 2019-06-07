@@ -152,7 +152,7 @@ main>div {
 				<div class="col-1"></div>
 				<div class="col-10 input_text">
 					<a href="#" style="color: #7a5634">아이디 비밀번호 찾기</a> <span>/</span> <a
-						href="input_insert.jsp" style="color: #7a5634">회원가입</a>
+						href="mainHomePage.jsp" style="color: #7a5634">회원가입</a>
 				</div>
 				<div class="col-1"></div>
 			</div>

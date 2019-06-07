@@ -19,9 +19,19 @@ div {
 	text-align: center;
 	padding: 0px;
 }
+#nav{
+	padding-top: -10%;
+
+}
+img{
+	float: inherit;
+	width: 80%;
+	height: 80%;
+}
 
 #header {
 	width: 100%;
+	
 	margin-left: 1px !important;
 	margin-right: 1px !important;
 	padding-left: 0px !important;
@@ -138,19 +148,19 @@ div {
 #navi_div {
 	text-align: center;
 }
-#notice_row > div
-{
+
+#notice_row>div {
 	border-left: 1px solid #ffba00;
 	border-right: 1px solid #ffba00;
 }
-#notice_row
-{
+
+#notice_row {
 	border: 1px solid #ffba00;
 	background-color: #ffba00;
 	color: white;
 }
-#notice_div
-{
+
+#notice_div {
 	border-top: 1px solid #ffba00;
 	border-bottom: 1px solid #ffba00;
 }
@@ -167,7 +177,7 @@ div {
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<link rel="shortcut icon" href="favicon.ico">	
+<link rel="shortcut icon" href="favicon.ico">
 
 <script>
 	$(function()
@@ -255,7 +265,7 @@ div {
 	<div id="container_div" class="container col-12">
 
 		<!--           HEADER-->
-		<div id=header class=row>
+		<div id=header class="row mt-2 mb- -5">
 
 			<div id="logo_div" class="col-12 col-lg-3">
 
@@ -313,53 +323,43 @@ div {
 			</div>
 
 		</div>
-		<!--           HEADER-->
-
-		<div id="contents_row" class="row mt-5">
+		<!--           HEADER-->	
+			<div class="row" id="nav">
+				<div  class="col-lg-1 col-md-1  mt- -4 d-none d-md-block"></div>
+				<div  class="col-lg-10 col-md-10 col-sm-12">
+				<img alt="" src="boardloge.jpg">
+				</div>
+				<div class="col-lg-1 col-md-1 d-none d-md-block"></div>
+			</div>
+		<div id="contents_row" class="row mt-2">
 
 			<div id="contents_outter_div" class="col-10">
 
 				<div class="row">
 
 					<div id="contents_div" class="col-lg-12">
-						
+
 						<div class="row my-3">
 
-								<div class="col-12">
+							<div class="col-12">
 
-									<div id="notice_row" class="row">
+								<div id="notice_row" class="row">
 
-										<div class="notice_seq_div col-lg-1 my-auto">
-											
-											글 번호
-										
-										</div>
+									<div class="notice_seq_div col-lg-1 my-auto">글 번호</div>
 
-										<div class="notice_text_div col-lg-5 my-auto">
+									<div class="notice_text_div col-lg-5 my-auto">글 제목</div>
 
-											글 제목
+									<div class="notice_writer_div col-lg-3 my-auto">글 작성자</div>
 
-										</div>
-
-										<div class="notice_writer_div col-lg-3 my-auto">
-											
-											글 작성자
-
-										</div>
-										
-										<div class="notice_time_div col-lg-3 my-auto">
-										
-											글 작성 시간
-										
-										</div>
-										
-									</div>
+									<div class="notice_time_div col-lg-3 my-auto">글 작성 시간</div>
 
 								</div>
 
 							</div>
-						
-						
+
+						</div>
+
+
 						<c:forEach var="i" begin="1" end="${ listsize }" step="1">
 
 							<div class="row my-3">
@@ -367,12 +367,8 @@ div {
 								<div class="col-12">
 
 									<div id="notice_div" class="row">
-
-										<div class="col-lg-1 my-auto">
-											
-											${ list[i-1].no_seq }
-										
-										</div>
+									
+										<div class="col-lg-1 my-auto">${ list[i-1].no_seq }</div>
 
 										<div class="col-lg-5 my-auto">
 
@@ -380,18 +376,10 @@ div {
 
 										</div>
 
-										<div class="col-lg-3 my-auto">
-											
-											${ list[i-1].no_writer }
+										<div class="col-lg-3 my-auto">${ list[i-1].no_writer }</div>
 
-										</div>
-										
-										<div class="col-lg-3 my-auto">
-										
-											${ list[i-1].no_time }
-										
-										</div>
-										
+										<div class="col-lg-3 my-auto">${ list[i-1].no_time }</div>
+
 									</div>
 
 								</div>
@@ -423,16 +411,16 @@ div {
 
 				</div>
 				<c:if test="${ type == 'admin' }">
-					
+
 					<div class="row">
-					
+
 						<div class="col-12">
-						
+
 							<a href="NoticeWrite.jsp" class="btn btn-primary">글 쓰기</a>
-							
+
 						</div>
-						
-					</div>					
+
+					</div>
 
 				</c:if>
 			</div>

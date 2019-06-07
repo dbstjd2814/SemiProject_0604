@@ -221,6 +221,7 @@ cursor: pointer;
                         $("#phonecheckin").text("올바른 양식 입니다.");
                         $("#phonecheckin").css("color","blue");
                         $("#phonecheckvar").val("올바른 양식 입니다.");
+                        $("#pwcheckvar").val("");
                     }
                     else
                     {
@@ -236,7 +237,7 @@ cursor: pointer;
                 {// 패스워드 형식이 맞는지 구별 regex
                     var pwtext = $("#pwtext").val();
                     var regex = /^[A-Za-z0-9]{6,12}$/g
-                    if(regex.exec(pwtext) != null)
+                    if(regex.exec(pwtext) != null )
                     {
                         $("#pwcheckin").text("올바른 양식 입니다.");
                         $("#pwcheckin").css("color","blue");
@@ -245,6 +246,22 @@ cursor: pointer;
                     {
                         $("#pwcheckin").text("양식에 맞지 않습니다.");
                         $("#pwcheckin").css("color","red");
+                    }
+                })
+                $("#pwtext").on("focusout",function()
+                {// 패스워드 형식이 맞는지 구별 regex
+                	var pw1 = $("#pwtext").val();
+                	var pw2 = $("#pwtext2").val();
+                    if(pw1 != pw2 &&  pw1 != null)
+                    {
+                    	$("#pwcheckin").text("양식에 맞지 않습니다.");
+                        $("#pwcheckin").css("color","red");
+                        
+                    }
+                    else
+                    {
+                    	$("#pwcheckin").text("올바른 양식 입니다.");
+                        $("#pwcheckin").css("color","blue");
                     }
                 })
                 

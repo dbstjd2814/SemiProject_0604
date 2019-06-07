@@ -65,7 +65,7 @@
 			
 			<div class="col-6">
 				
-				${ dto.no_title }
+				<b>공지 </b><span>&nbsp&nbsp&nbsp</span>${ dto.no_title }
 				
 			</div>
 			
